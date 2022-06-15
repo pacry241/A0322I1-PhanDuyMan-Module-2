@@ -12,7 +12,7 @@ public class MainInsertElement {
             System.out.println("Nhập vị trí cần thêm");
             index= input.nextInt();
         }
-        while (index <0 && index >arr.length-11);
+        while ( index >arr.length-1||index<0);
         for(int i = arr.length -1; i>index;i--){
             arr[i]=arr[i-1];
         }

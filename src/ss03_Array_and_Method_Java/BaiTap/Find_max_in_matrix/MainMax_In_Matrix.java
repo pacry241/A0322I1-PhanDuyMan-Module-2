@@ -4,7 +4,6 @@ public class MainMax_In_Matrix {
     public static void main(String[] args) {
         int m;
         int n;
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Nhập vào số dòng của ma trận: ");
