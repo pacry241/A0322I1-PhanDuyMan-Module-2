@@ -6,6 +6,7 @@ public class MainDeteleElement {
         int number = input.nextInt();
         int index =0;
         int[] arr = {4, 12, 7, 8, 1, 6, 9,0,0,0};
+
         for (int i =0; i<arr.length;i++){
             if (arr[i] == number){
                 System.out.println("Element " + i);
