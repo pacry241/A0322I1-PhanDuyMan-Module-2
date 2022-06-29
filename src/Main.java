@@ -1,20 +1,24 @@
+import java.util.Scanner;
+
 public class Main {
-    private int x;
-
-    public Main(int x){
-        this.x = x;
-    }
-
-    public int getX() {
-        return x;
-    }
-
     public static void main(String[] args) {
-//        int number = 6;
-//        float a = (float) Math.sqrt(number);
-//        System.out.print(a);
-
-        Main obj = new Main(5);
-        System.out.println(obj.getX());
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("nhập");
+        int input = scanner.nextInt();
+        int[] arr = {1,2,3,4};
+        int check =0;
+        String[] arr1 = {"a", "b","c","d"};
+        for (int i = 0 ; i< arr.length;i++){
+            if (arr[i] == input){
+                System.out.println(arr[i]);
+                check = i;;
+                break;
+            }
+        }
+        for (int j = 0;j<arr1.length;j++){
+            if (j == arr[check]){
+                System.out.println(arr1[j]);
+            }
+        }
     }
 }
