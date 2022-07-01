@@ -7,6 +7,7 @@ public class Booking {
     private int IDcustom;
     private String namService;
     private String tenDichvu;
+    
     public Booking(){}
 
     public Booking(int codeBooking, Date startDate, Date endDate, int IDcustom, String namService, String tenDichvu) {

@@ -5,6 +5,9 @@ public class Contract {
     private int codeBooking;
     private long depoist,totalPayment;
 
+    public Contract() {
+    }
+
     public Contract(int numContract, int codeBooking, long depoist, long totalPayment) {
         this.numContract = numContract;
         this.codeBooking = codeBooking;
