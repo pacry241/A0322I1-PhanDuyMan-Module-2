@@ -17,10 +17,5 @@ public class MyListTest {
         System.out.println(myLists);
         MyList<Integer> newList =myLists.clone();
         System.out.println(newList);
-//        myLists.add(8);
-//        myLists.add(8);
-//        System.out.println(myLists);
-//        System.out.println(myLists.indexOf(8));
-//        System.out.println(myLists.get(2));
     }
 }
