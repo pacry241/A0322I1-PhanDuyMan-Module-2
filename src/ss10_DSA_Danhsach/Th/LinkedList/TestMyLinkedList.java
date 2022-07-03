@@ -1,4 +1,4 @@
-package DSA_Danhsach.Th.LinkedList;
+package ss10_DSA_Danhsach.Th.LinkedList;
 
 public class TestMyLinkedList {
     public static void main(String[] args) {

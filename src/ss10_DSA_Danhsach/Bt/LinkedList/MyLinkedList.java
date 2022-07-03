@@ -1,4 +1,4 @@
-package DSA_Danhsach.Bt.LinkedList;
+package ss10_DSA_Danhsach.Bt.LinkedList;
 
 public class MyLinkedList<E> {
 

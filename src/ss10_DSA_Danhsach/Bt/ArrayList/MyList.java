@@ -1,4 +1,4 @@
-package DSA_Danhsach.Bt.ArrayList;
+package ss10_DSA_Danhsach.Bt.ArrayList;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package DSA_Danhsach.Bt.ArrayList;
+package ss10_DSA_Danhsach.Bt.ArrayList;
 
 public class MyListTest {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package DSA_Danhsach.Th.List;
+package ss10_DSA_Danhsach.Th.List;
 
 import java.util.Arrays;
 
