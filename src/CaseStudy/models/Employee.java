@@ -80,12 +80,12 @@ public class Employee  extends Person{
                 ", academicLevel=" + academicLevel +
                 ", office='" + office + '\'' +
                 ", wage=" + wage +
-                '}';
+                '}'+super.toString();
     }
 
     public static void main(String[] args) {
         Employee obj = new Employee(2132156465,Level.DaiHoc,Office.Service,1232233);
-
+        obj.setPhoneNumber(1222);
         System.out.println(obj);
     }
 }
