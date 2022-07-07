@@ -1,16 +1,16 @@
 package CaseStudy.models;
-import java.util.Date;
+
 public abstract class Person {
     private String fullName;
     private String gender;
-    private Date dateOfBirth;
+    private String dateOfBirth;
     private String email;
     private long numCCCD;
     private long phoneNumber;
 
     public  Person(){};
 
-    public Person(String fullName, String gender, Date dateOfBirth, String email, int numCCCD, int phoneNumber) {
+    public Person(String fullName, String gender, String dateOfBirth, String email, long numCCCD, long phoneNumber) {
         this.fullName = fullName;
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
@@ -35,11 +35,11 @@ public abstract class Person {
         this.gender = gender;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

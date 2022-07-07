@@ -1,6 +1,6 @@
 package CaseStudy.models;
 
-import java.util.Date;
+
 
 public class Customer extends Person{
     private Type typeCustomer;
@@ -22,7 +22,7 @@ public class Customer extends Person{
         this.codeCustomer = codeCustomer;
     }
 
-    public Customer(String fullName, String gender, Date dateOfBirth, String email, int numCCCD, int phoneNumber, Type typeCustomer, String address, int codeCustomer) {
+    public Customer(String fullName, String gender, String dateOfBirth, String email, int numCCCD, int phoneNumber, Type typeCustomer, String address, int codeCustomer) {
         super(fullName, gender, dateOfBirth, email, numCCCD, phoneNumber);
         this.typeCustomer = typeCustomer;
         this.address = address;

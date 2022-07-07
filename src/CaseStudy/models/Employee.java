@@ -1,29 +1,17 @@
 package CaseStudy.models;
+import CaseStudy.Repository.Level;
+import CaseStudy.Repository.Office;
 
 import java.util.Date;
 
 public class Employee  extends Person{
     private long codeEmployee;
-    private Level academicLevel;
+    private  Level academicLevel;
     private Office office;
     private double wage;
 
-    enum Office{
-        Reception,
-        Service,
-        Experts,
-        Personnel,
-        Manager,
-        President
 
 
-    }
-    enum Level{
-        TrungCap,
-        CaoDang,
-        DaiHoc,
-        SauDaiHoc
-    }
     public Employee(){};
 
     public Employee(long codeEmployee, Level academicLevel,Office office, double wage) {
@@ -33,7 +21,7 @@ public class Employee  extends Person{
         this.wage = wage;
     }
 
-    public Employee(String fullName, String gender, Date dateOfBirth, String email, int numCCCD, int phoneNumber, long codeEmployee, Level academicLevel, Office office, double wage) {
+    public Employee(String fullName, String gender, String dateOfBirth, String email, long numCCCD, long phoneNumber, Level academicLevel, Office office, double wage) {
         super(fullName, gender, dateOfBirth, email, numCCCD, phoneNumber);
         this.codeEmployee = codeEmployee;
         this.academicLevel = academicLevel;
@@ -84,8 +72,5 @@ public class Employee  extends Person{
     }
 
     public static void main(String[] args) {
-        Employee obj = new Employee(2132156465,Level.DaiHoc,Office.Service,1232233);
-        obj.setPhoneNumber(1222);
-        System.out.println(obj);
     }
 }

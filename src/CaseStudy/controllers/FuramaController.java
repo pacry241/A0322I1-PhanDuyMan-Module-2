@@ -1,9 +1,14 @@
 package CaseStudy.controllers;
+import CaseStudy.Service.EmployeeService;
+import CaseStudy.Service.EmployeeServiceImpl;
+import CaseStudy.models.Employee;
+
 import java.util.Scanner;
 
 public class FuramaController {
     public static Scanner scanner = new Scanner(System.in);
 
+    private EmployeeService employeeService = new EmployeeServiceImpl();
     public static int displayMainMenu(){
         System.out.println("Chose on Menu: ");
         System.out.println("1.\tEmployee Management");
@@ -24,6 +29,12 @@ public class FuramaController {
         System.out.println("4\tReturn main menu");
         int chose = scanner.nextInt();
         return chose;
+    }
+
+    public void displaylistEmployees(){
+        for (Employee employee : employeeService.findALl()){
+            System.out.println(employee);
+        };
     }
 
     public static int customerManagement  (){
@@ -67,31 +78,35 @@ public class FuramaController {
         return chose;
     }
 
+
+
     public static void main(String[] args) {
-        int choseMenu, choseMenuAfter = -1;
-        do {
-            System.out.println("Enter chose: ");
-            choseMenu = displayMainMenu();
-            switch (choseMenu){
-                case 1:
-                    choseMenuAfter = employeeManagement();
-                    break;
-                case 2:
-                    choseMenuAfter = customerManagement();
-                    break;
-                case 3:
-                    choseMenuAfter = facilityManagement();
-                    break;
-                case 4:
-                    choseMenuAfter = bookingManagerment();
-                    break;
-                case 5:
-                    choseMenuAfter = promotionManagement();
-                    break;
-                case 6:
-                    System.out.println("Out of Menu");
-                    break;
-            }
-        }while (choseMenu != 6);
+        FuramaController Employee = new FuramaController();
+//        int choseMenu, choseMenuAfter = -1;
+//        do {
+//            System.out.println("Enter chose: ");
+//            choseMenu = displayMainMenu();
+//            switch (choseMenu){
+//                case 1:
+//                    choseMenuAfter = employeeManagement();
+//                    break;
+//                case 2:
+//                    choseMenuAfter = customerManagement();
+//                    break;
+//                case 3:
+//                    choseMenuAfter = facilityManagement();
+//                    break;
+//                case 4:
+//                    choseMenuAfter = bookingManagerment();
+//                    break;
+//                case 5:
+//                    choseMenuAfter = promotionManagement();
+//                    break;
+//                case 6:
+//                    System.out.println("Out of Menu");
+//                    break;
+//            }
+//        }while (choseMenu != 6);
+        Employee.displaylistEmployees();
     }
 }
