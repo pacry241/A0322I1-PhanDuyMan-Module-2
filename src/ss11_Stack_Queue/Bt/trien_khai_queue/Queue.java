@@ -47,5 +47,19 @@ public class Queue {
             }
         }
     }
+
+    public static void main(String[] args) {
+        Queue myQueue = new Queue();
+        myQueue.enQueue(3);
+        myQueue.enQueue(34);
+        myQueue.enQueue(35);
+        myQueue.deQueue();
+        myQueue.enQueue(36);
+        myQueue.enQueue(37);
+        myQueue.deQueue();
+        myQueue.deQueue();
+        myQueue.deQueue();
+        myQueue.displayQueue();
+    }
 }
 
