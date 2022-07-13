@@ -22,6 +22,7 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
 
     @Override
     public void addEmployee(Employee employee) {
+        employee = new Employee();
         employeeList.add(employee);
 
     }
