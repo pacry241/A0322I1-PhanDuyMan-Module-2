@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class FuramaController {
     public static Scanner scanner = new Scanner(System.in);
 
-    private EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+    private EmployeeService employeeService = new EmployeeServiceImpl();
     public static int displayMainMenu(){
         System.out.println("Chose on Menu: ");
         System.out.println("1.\tEmployee Management");
@@ -37,9 +37,10 @@ public class FuramaController {
         };
         System.out.println("------------------");
     }
-    public void addNewEmployee(EmployeeServiceImpl newEmployee){
-        ;
+    public void addNewEmployee(Employee employee){
+        employeeService.addEmployee(employee);
     }
+
 
     public static int customerManagement  (){
         System.out.println("Chose on Menu Customer Management  :");
@@ -86,33 +87,40 @@ public class FuramaController {
 
     public static void main(String[] args) {
         FuramaController Employee = new FuramaController();
-        int choseMenu, choseMenuAfter = -1;
-        do {
-            System.out.println("Enter chose: ");
-            choseMenu = displayMainMenu();
-            switch (choseMenu){
-                case 1:
-                    choseMenuAfter = employeeManagement();
-                    if(choseMenuAfter == 1){
-                        Employee.displaylistEmployees();
-                    }
-                    break;
-                case 2:
-                    choseMenuAfter = customerManagement();
-                    break;
-                case 3:
-                    choseMenuAfter = facilityManagement();
-                    break;
-                case 4:
-                    choseMenuAfter = bookingManagerment();
-                    break;
-                case 5:
-                    choseMenuAfter = promotionManagement();
-                    break;
-                case 6:
-                    System.out.println("Out of Menu");
-                    break;
-            }
-        }while (choseMenu != 6);
+//        int choseMenu, choseMenuAfter = -1;
+//        do {
+//            System.out.println("Enter chose: ");
+//            choseMenu = displayMainMenu();
+//            switch (choseMenu){
+//                case 1:
+//                    choseMenuAfter = employeeManagement();
+//                    if(choseMenuAfter == 1){
+//                        Employee.displaylistEmployees();
+//                    }
+//                    break;
+//                case 2:
+//                    choseMenuAfter = customerManagement();
+//                    break;
+//                case 3:
+//                    choseMenuAfter = facilityManagement();
+//                    break;
+//                case 4:
+//                    choseMenuAfter = bookingManagerment();
+//                    break;
+//                case 5:
+//                    choseMenuAfter = promotionManagement();
+//                    break;
+//                case 6:
+//                    System.out.println("Out of Menu");
+//                    break;
+//            }
+//        }while (choseMenu != 6);
+        Employee.displaylistEmployees();
+        Employee.employeeService.updateEmployee(1,1000,"asdd@gmail.com",12344556,"Cao Dang","nhanvien");
+        Employee.employeeService.updateEmployee(15,1000,"asdd@gmail.com",12344556,"Cao Dang","nhanvien");
+        Employee.employeeService.updateEmployee(9,1000,"asdd@gmail.com",12344556,"Cao Dang","nhanvien");
+        Employee.employeeService.updateEmployee(3,1000,"asdd@gmail.com",12344556,"Cao Dang","nhanvien");
+        Employee.displaylistEmployees();
+
     }
 }
