@@ -4,8 +4,8 @@ import CaseStudy.Repository.EmployeeRepository;
 import CaseStudy.Repository.EmployeeRepositoryImpl;
 import CaseStudy.models.Employee;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class EmployeeServiceImpl extends Employee implements EmployeeService {
     private EmployeeRepository repository = new EmployeeRepositoryImpl();
@@ -16,13 +16,74 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
     }
 
     @Override
-    public void addEmployee(Employee employee) {
+    public void addEmployee() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Nhập tên: ");
+        String name = scanner.nextLine();
+
+        System.out.println("Nhập giới tính: ");
+        String input = scanner.nextLine();
+        boolean gender = true ;
+        if (input.toLowerCase()=="nam"){
+            gender = true;
+        }
+        if (input.toLowerCase()=="nu"){
+            gender = false;
+        }
+
+        System.out.println("Nhập ngày sinh: ");
+        String date = scanner.nextLine();
+
+        System.out.println("Nhập địa chỉ Email: ");
+        String email = scanner.nextLine();
+
+        System.out.println("Nhập CMND: ");
+        String Cmnd = scanner.nextLine();
+
+        System.out.println("Nhập số điện thoại: ");
+        String sdt = scanner.nextLine();
+
+        System.out.println("Nhập trình độ học vấn: ");
+        String level = scanner.nextLine();
+
+
+        System.out.println("Nhập ID của nhân viên: ");
+        int id = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Nhập chức vụ: ");
+        String office = scanner.nextLine();
+
+        System.out.println("Nhập số lương cho nhân viên mới: ");
+        double wage = scanner.nextDouble();
+
+        Employee employee = new Employee(name,gender,date,email,Cmnd,sdt,id,level,office,wage);
+
         repository.addEmployee(employee);
     }
 
     @Override
-    public void updateEmployee(int id, double wage, String Email, long phoneNumber, String level, String office) {
-        repository.updateEmployee(id, wage, Email, phoneNumber, level, office);
+    public void updateEmployee() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập ID cần sửa");
+        int ID = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Nhập tiền lương: ");
+        double wage = Double.parseDouble(scanner.nextLine());
+
+        System.out.println("Nhập chức vụ: ");
+        String office = scanner.nextLine();
+
+        System.out.println("Nhập trình độ học vấn: ");
+        String level = scanner.nextLine();
+
+        System.out.println("Nhập số điện thoại: ");
+        String sdt = scanner.nextLine();
+
+        System.out.println("Nhập địa chỉ Email: ");
+        String email = scanner.nextLine();
+
+        repository.updateEmployee(ID,wage,email,sdt,level,office);
     }
 
 

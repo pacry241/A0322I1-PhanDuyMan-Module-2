@@ -1,37 +1,37 @@
 package CaseStudy.models;
 
 public abstract class Person {
-    private String fullName;
-    private String gender;
+    private String name;
+    private boolean gender;
     private String dateOfBirth;
     private String email;
-    private long numCCCD;
-    private long phoneNumber;
+    private String CMND;
+    private String sdt;
 
     public  Person(){};
 
-    public Person(String fullName, String gender, String dateOfBirth, String email, long numCCCD, long phoneNumber) {
-        this.fullName = fullName;
+    public Person(String name, boolean gender, String dateOfBirth, String email, String CMND, String sdt) {
+        this.name = name;
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
         this.email = email;
-        this.numCCCD = numCCCD;
-        this.phoneNumber = phoneNumber;
+        this.CMND = CMND;
+        this.sdt = sdt;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getGender() {
+    public boolean isGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(boolean gender) {
         this.gender = gender;
     }
 
@@ -51,32 +51,31 @@ public abstract class Person {
         this.email = email;
     }
 
-    public long getNumCCCD() {
-        return numCCCD;
+    public String getCMND() {
+        return CMND;
     }
 
-    public void setNumCCCD(int numCCCD) {
-        this.numCCCD = numCCCD;
+    public void setCMND(String CMND) {
+        this.CMND = CMND;
     }
 
-    public long getPhoneNumber() {
-        return phoneNumber;
+    public String getSdt() {
+        return sdt;
     }
 
-    public void setPhoneNumber(long phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
     }
 
     @Override
     public String toString() {
-        return "Person{" +
-                "fullName='" + fullName + '\'' +
-                ", gender='" + gender + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
+        return
+                "name='" + name + '\'' +
+                ", gender=" + gender +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", email='" + email + '\'' +
-                ", numCCCD=" + numCCCD +
-                ", phoneNumber=" + phoneNumber +
-                '}';
+                ", CMND=" + CMND +
+                ", sdt=" + sdt + " ";
     }
 }
 

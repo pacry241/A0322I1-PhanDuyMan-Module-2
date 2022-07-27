@@ -1,44 +1,35 @@
 package CaseStudy.models;
 
 public class Employee  extends Person{
-    private int codeEmployee;
-    private String academicLevel;
+    private int ID;
+    private String level;
     private String office;
     private double wage;
 
-
-
     public Employee(){};
 
-    public Employee(int codeEmployee, String academicLevel, String office, double wage) {
-        this.codeEmployee = codeEmployee;
-        this.academicLevel = academicLevel;
+    public Employee(String name, boolean gender, String dateOfBirth, String email, String CMND, String sdt, int ID, String level, String office, double wage) {
+        super(name, gender, dateOfBirth, email, CMND, sdt);
+        this.ID = ID;
+        this.level = level;
         this.office = office;
         this.wage = wage;
     }
 
-    public Employee(String fullName, String gender, String dateOfBirth, String email, long numCCCD, long phoneNumber,int codeEmployee, String academicLevel, String office, double wage) {
-        super(fullName, gender, dateOfBirth, email, numCCCD, phoneNumber);
-        this.codeEmployee = codeEmployee;
-        this.academicLevel = academicLevel;
-        this.office = office;
-        this.wage = wage;
+    public int getID() {
+        return ID;
     }
 
-    public long getCodeEmployee() {
-        return codeEmployee;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
-    public void setCodeEmployee(int codeEmployee) {
-        this.codeEmployee = codeEmployee;
+    public String getLevel() {
+        return level;
     }
 
-    public java.lang.String getAcademicLevel() {
-        return academicLevel;
-    }
-
-    public void setAcademicLevel(java.lang.String academicLevel) {
-        this.academicLevel = academicLevel;
+    public void setLevel(String level) {
+        this.level = level;
     }
 
     public String getOffice() {
@@ -58,15 +49,12 @@ public class Employee  extends Person{
     }
 
     @Override
-    public java.lang.String toString() {
-        return "Employee{" +
-                "codeEmployee=" + codeEmployee +
-                ", academicLevel=" + academicLevel +
+    public String toString() {
+        return "{" +super.toString()+
+                "ID=" + ID +
+                ", academicLevel='" + level + '\'' +
                 ", office='" + office + '\'' +
                 ", wage=" + wage +
-                '}'+super.toString();
-    }
-
-    public static void main(java.lang.String[] args) {
+                '}';
     }
 }

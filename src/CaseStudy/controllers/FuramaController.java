@@ -31,14 +31,17 @@ public class FuramaController {
         return chose;
     }
 
+    public void editEmployee(){
+        employeeService.updateEmployee();
+    }
     public void displaylistEmployees(){
         for (Employee employee : employeeService.findALl()){
             System.out.println(employee);
         };
         System.out.println("------------------");
     }
-    public void addNewEmployee(Employee employee){
-        employeeService.addEmployee(employee);
+    public void addNewEmployee(){
+        employeeService.addEmployee();
     }
 
 
@@ -115,12 +118,9 @@ public class FuramaController {
 //                    break;
 //            }
 //        }while (choseMenu != 6);
-        Employee.displaylistEmployees();
-        Employee.employeeService.updateEmployee(1,1000,"asdd@gmail.com",12344556,"Cao Dang","nhanvien");
-        Employee.employeeService.updateEmployee(15,1000,"asdd@gmail.com",12344556,"Cao Dang","nhanvien");
-        Employee.employeeService.updateEmployee(9,1000,"asdd@gmail.com",12344556,"Cao Dang","nhanvien");
-        Employee.employeeService.updateEmployee(3,1000,"asdd@gmail.com",12344556,"Cao Dang","nhanvien");
-        Employee.displaylistEmployees();
 
+
+        Employee.addNewEmployee();
+        Employee.displaylistEmployees();
     }
 }

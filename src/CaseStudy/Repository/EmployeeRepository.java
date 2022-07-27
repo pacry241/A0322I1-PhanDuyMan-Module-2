@@ -7,6 +7,8 @@ import java.util.List;
 public interface EmployeeRepository {
 
     List<Employee> findALl();
+
     void addEmployee(Employee employee);
-    void updateEmployee(int codeEmployee, double wage, String Email, long phoneNumber, String level, String office);
+
+    void updateEmployee(int id, double wage, String Email, String sdt, String level, String office);
 }
