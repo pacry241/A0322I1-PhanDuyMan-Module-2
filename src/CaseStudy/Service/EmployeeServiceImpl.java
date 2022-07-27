@@ -50,7 +50,19 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
 
         System.out.println("Nhập ID của nhân viên: ");
         int id = Integer.parseInt(scanner.nextLine());
-
+        do {
+            int check =1;
+            for (int i =0; i<repository.findALl().size();i++){
+                if (repository.findALl().get(i).getID()==id){
+                    System.out.println("Nhập lại ID");
+                    id = Integer.parseInt(scanner.nextLine());
+                    check = 0;
+                }
+            }
+            if (check==1){
+                break;
+            }
+        }while (true);
         System.out.println("Nhập chức vụ: ");
         String office = scanner.nextLine();
 

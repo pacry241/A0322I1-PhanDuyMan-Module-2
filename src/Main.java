@@ -41,14 +41,18 @@ public class Main {
 //        System.out.println(employeeList.contains(employee2));
 //        System.out.println("Nhập ID của nhân viên: ");
         Employee employee = new Employee("D",false,"1/10/2000","abcrrr@gmail.com","12345","0901",4,"Đại học", "tiếp tân",8000000);
+        int id  = Integer.parseInt(scanner.nextLine());
         do {
-
+            int check =1;
             for (int i =0; i<employeeList.size();i++){
-                if (employeeList.get(i).getID()==employee.getID()){
+                if (employeeList.get(i).getID()==id){
                     System.out.println("Nhập lại ID");
-                    int id = Integer.parseInt(scanner.nextLine());
-                    employee.setID(id);
+                    id = Integer.parseInt(scanner.nextLine());
+                    check = 0;
                 }
+            }
+            if (check==1){
+                break;
             }
         }while (true);
     }

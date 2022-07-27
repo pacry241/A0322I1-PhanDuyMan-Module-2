@@ -90,17 +90,26 @@ public class FuramaController {
 
     public static void main(String[] args) {
         FuramaController Employee = new FuramaController();
-//        int choseMenu, choseMenuAfter = -1;
-//        do {
-//            System.out.println("Enter chose: ");
-//            choseMenu = displayMainMenu();
-//            switch (choseMenu){
-//                case 1:
-//                    choseMenuAfter = employeeManagement();
-//                    if(choseMenuAfter == 1){
-//                        Employee.displaylistEmployees();
-//                    }
-//                    break;
+        int choseMenu, choseMenuAfter = -1;
+        do {
+            System.out.println("Enter chose: ");
+            choseMenu = displayMainMenu();
+            switch (choseMenu) {
+                case 1:
+                    choseMenuAfter = employeeManagement();
+                    if (choseMenuAfter == 1) {
+                        Employee.displaylistEmployees();
+                    }
+                    if (choseMenuAfter == 2) {
+                        Employee.addNewEmployee();
+                    }
+                    if (choseMenuAfter == 3) {
+                        Employee.editEmployee();
+                    }
+                    if (choseMenuAfter == 4) {
+                        displayMainMenu();
+                    }
+                    break;
 //                case 2:
 //                    choseMenuAfter = customerManagement();
 //                    break;
@@ -116,11 +125,14 @@ public class FuramaController {
 //                case 6:
 //                    System.out.println("Out of Menu");
 //                    break;
-//            }
-//        }while (choseMenu != 6);
+            }
+        } while (choseMenu != 6);
 
 
-        Employee.addNewEmployee();
-        Employee.displaylistEmployees();
+//        Employee.addNewEmployee();
+//        Employee.displaylistEmployees();
+//        Employee.editEmployee();
+//        Employee.displaylistEmployees();
+//    }
     }
 }
