@@ -1,7 +1,8 @@
-package CaseStudy.Service;
+package CaseStudy.Service.Impl;
 
 import CaseStudy.Repository.EmployeeRepository;
 import CaseStudy.Repository.EmployeeRepositoryImpl;
+import CaseStudy.Service.Interface.EmployeeService;
 import CaseStudy.models.Employee;
 
 import java.util.List;
@@ -72,6 +73,7 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
         Employee employee = new Employee(name,gender,date,email,Cmnd,sdt,id,level,office,wage);
 
         repository.addEmployee(employee);
+        System.out.println("Thêm thành công nhân viên mới");
     }
 
     @Override

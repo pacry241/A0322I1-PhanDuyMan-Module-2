@@ -1,6 +1,6 @@
 package CaseStudy.controllers;
-import CaseStudy.Service.EmployeeService;
-import CaseStudy.Service.EmployeeServiceImpl;
+import CaseStudy.Service.Interface.EmployeeService;
+import CaseStudy.Service.Impl.EmployeeServiceImpl;
 import CaseStudy.models.Employee;
 
 import java.util.Scanner;
@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class FuramaController {
     public static Scanner scanner = new Scanner(System.in);
 
-    private EmployeeService employeeService = new EmployeeServiceImpl();
     public static int displayMainMenu(){
         System.out.println("Chose on Menu: ");
         System.out.println("1.\tEmployee Management");
@@ -27,23 +26,9 @@ public class FuramaController {
         System.out.println("2\tAdd new employee");
         System.out.println("3\tEdit employee");
         System.out.println("4\tReturn main menu");
-        int chose = Integer.parseInt(scanner.nextLine());
+        int chose = scanner.nextInt();
         return chose;
     }
-
-    public void editEmployee(){
-        employeeService.updateEmployee();
-    }
-    public void displaylistEmployees(){
-        for (Employee employee : employeeService.findALl()){
-            System.out.println(employee);
-        };
-        System.out.println("------------------");
-    }
-    public void addNewEmployee(){
-        employeeService.addEmployee();
-    }
-
 
     public static int customerManagement  (){
         System.out.println("Chose on Menu Customer Management  :");
@@ -82,57 +67,35 @@ public class FuramaController {
         System.out.println("1.\tDisplay list customers use service");
         System.out.println("2.\tDisplay list customers get voucher");
         System.out.println("3.\tReturn main menu");
-        int chose = Integer.parseInt(scanner.nextLine());
+        int chose = scanner.nextInt();
         return chose;
     }
 
-
-
     public static void main(String[] args) {
-        FuramaController Employee = new FuramaController();
         int choseMenu, choseMenuAfter = -1;
         do {
             System.out.println("Enter chose: ");
             choseMenu = displayMainMenu();
-            switch (choseMenu) {
+            switch (choseMenu){
                 case 1:
                     choseMenuAfter = employeeManagement();
-                    if (choseMenuAfter == 1) {
-                        Employee.displaylistEmployees();
-                    }
-                    if (choseMenuAfter == 2) {
-                        Employee.addNewEmployee();
-                    }
-                    if (choseMenuAfter == 3) {
-                        Employee.editEmployee();
-                    }
-                    if (choseMenuAfter == 4) {
-                        displayMainMenu();
-                    }
                     break;
-//                case 2:
-//                    choseMenuAfter = customerManagement();
-//                    break;
-//                case 3:
-//                    choseMenuAfter = facilityManagement();
-//                    break;
-//                case 4:
-//                    choseMenuAfter = bookingManagerment();
-//                    break;
-//                case 5:
-//                    choseMenuAfter = promotionManagement();
-//                    break;
-//                case 6:
-//                    System.out.println("Out of Menu");
-//                    break;
+                case 2:
+                    choseMenuAfter = customerManagement();
+                    break;
+                case 3:
+                    choseMenuAfter = facilityManagement();
+                    break;
+                case 4:
+                    choseMenuAfter = bookingManagerment();
+                    break;
+                case 5:
+                    choseMenuAfter = promotionManagement();
+                    break;
+                case 6:
+                    System.out.println("Out of Menu");
+                    break;
             }
-        } while (choseMenu != 6);
-
-
-//        Employee.addNewEmployee();
-//        Employee.displaylistEmployees();
-//        Employee.editEmployee();
-//        Employee.displaylistEmployees();
-//    }
+        }while (choseMenu != 6);
     }
 }

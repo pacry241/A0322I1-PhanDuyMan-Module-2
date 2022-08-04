@@ -1,4 +1,4 @@
-package CaseStudy.Service;
+package CaseStudy.Service.Interface;
 
 public interface BookingService extends Service {
 }

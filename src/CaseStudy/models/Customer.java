@@ -3,37 +3,26 @@ package CaseStudy.models;
 
 
 public class Customer extends Person{
-    private Type typeCustomer;
+    private String typeCustomer;
     private String address;
     private int codeCustomer;
 
-    enum Type{
-        Diamond,
-        Platinium,
-        Gold,
-        Silver,
-        Member
-    }
+
     public Customer(){};
 
-    public Customer(Type typeCustomer, String address, int codeCustomer) {
-        this.typeCustomer = typeCustomer;
-        this.address = address;
-        this.codeCustomer = codeCustomer;
-    }
 
-    public Customer(String name, boolean gender, String dateOfBirth, String email, String CMND, String sdt, Type typeCustomer, String address, int codeCustomer) {
+    public Customer(String name, boolean gender, String dateOfBirth, String email, String CMND, String sdt, String typeCustomer, String address, int codeCustomer) {
         super(name, gender, dateOfBirth, email, CMND, sdt);
         this.typeCustomer = typeCustomer;
         this.address = address;
         this.codeCustomer = codeCustomer;
     }
 
-    public Type getTypeCustomer() {
+    public String getTypeCustomer() {
         return typeCustomer;
     }
 
-    public void setTypeCustomer(Type typeCustomer) {
+    public void setTypeCustomer(String typeCustomer) {
         this.typeCustomer = typeCustomer;
     }
 
@@ -53,4 +42,12 @@ public class Customer extends Person{
         this.codeCustomer = codeCustomer;
     }
 
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "typeCustomer='" + typeCustomer + '\'' +
+                ", address='" + address + '\'' +
+                ", codeCustomer=" + codeCustomer +
+                '}'+super.toString();
+    }
 }

@@ -5,7 +5,7 @@ public class Booking {
     private Date startDate;
     private Date endDate;
     private int IDcustom;
-    private String namService;
+    private String nameService;
     private String tenDichvu;
     
     public Booking(){}
@@ -15,7 +15,7 @@ public class Booking {
         this.startDate = startDate;
         this.endDate = endDate;
         this.IDcustom = IDcustom;
-        this.namService = namService;
+        this.nameService = namService;
         this.tenDichvu = tenDichvu;
     }
 
@@ -51,12 +51,12 @@ public class Booking {
         this.IDcustom = IDcustom;
     }
 
-    public String getNamService() {
-        return namService;
+    public String getNameService() {
+        return nameService;
     }
 
-    public void setNamService(String namService) {
-        this.namService = namService;
+    public void setNameService(String nameService) {
+        this.nameService = nameService;
     }
 
     public String getTenDichvu() {
@@ -74,7 +74,7 @@ public class Booking {
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", IDcustom=" + IDcustom +
-                ", namService='" + namService + '\'' +
+                ", namService='" + nameService + '\'' +
                 ", tenDichvu='" + tenDichvu + '\'' +
                 '}';
     }
